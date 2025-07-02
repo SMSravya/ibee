@@ -1,0 +1,33 @@
+# Ignore Python cache, database, logs, and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+.env*
+
+# Ignore VSCode and editor files
+.vscode/
+*.code-workspace
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore user data and output
+users.json
+outputs/
+
+# Ignore virtual environments
+venv/
+ENV/
+
+# Ignore node_modules (if any)
+node_modules/
+
+# Ignore frontend build artifacts (if any)
+dist/
+build/

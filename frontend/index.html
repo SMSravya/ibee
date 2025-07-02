@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Upload and Query App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove modal and logout styles, keep rest */
+    </style>
+</head>
+<body>
+    <div class="container" id="appContainer" style="display:block;">
+        <h1 style="position:relative;">Data Upload and Query App</h1>
+        <section>
+            <h2>Upload CSV</h2>
+            <form id="uploadForm">
+                <input type="text" id="tableName" placeholder="Table Name" required />
+                <input type="file" id="csvFile" accept=".csv" required />
+                <button type="submit">Upload</button>
+            </form>
+            <div id="uploadResult"></div>
+        </section>
+        <section>
+            <h2>Available Tables</h2>
+            <button onclick="fetchTables()">Refresh Table List</button>
+            <ul id="tableList"></ul>
+        </section>
+        <section>
+            <h2>Table Data</h2>
+            <div>
+                <input type="text" id="queryTableName" placeholder="Table Name" />
+                <button onclick="fetchTableData()">Get Data</button>
+            </div>
+            <div id="tableData"></div>
+        </section>
+        <section>
+            <h2>Query Table with Filters</h2>
+            <form id="queryForm">
+                <input type="text" id="filterTableName" placeholder="Table Name" required />
+                <input type="text" id="filters" placeholder="filters e.g. category=water,price=100" />
+                <input type="number" id="limit" placeholder="Limit (default 100)" />
+                <input type="number" id="offset" placeholder="Offset (default 0)" />
+                <button type="submit">Query</button>
+            </form>
+            <div id="queryResult"></div>
+        </section>
+        <section>
+            <h2>API Activity Log</h2>
+            <button onclick="fetchLogs()">Show Logs</button>
+            <pre id="logContent"></pre>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
